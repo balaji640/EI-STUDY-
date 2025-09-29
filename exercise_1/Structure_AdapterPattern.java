@@ -6,18 +6,18 @@ import exercise_1.AudioPlayer;
 import exercise_1.MediaAdapter;
 import exercise_1.MediaPlayer;
 
-//Target interface
+
 	interface MediaPlayer {
 	 void play(String type, String file);
 	}
 
-	//Adaptee
+	
 	class AdvancedMediaPlayer {
 	 public void playMp4(String file) { System.out.println("Playing mp4: " + file); }
 	 public void playVlc(String file) { System.out.println("Playing vlc: " + file); }
 	}
 
-	//Adapter
+	
 	class MediaAdapter implements MediaPlayer {
 	 private AdvancedMediaPlayer advanced = new AdvancedMediaPlayer();
 	 public void play(String type, String file) {
@@ -27,13 +27,13 @@ import exercise_1.MediaPlayer;
 	 }
 	}
 
-	//Client
+
 	class AudioPlayer implements MediaPlayer {
 	 private MediaAdapter adapter = new MediaAdapter();
 	 public void play(String type, String file) { adapter.play(type, file); }
 	}
 
-	//Demo
+
 	public class Structure_AdapterPattern {
 	 public static void main(String[] args) {
 	     AudioPlayer player = new AudioPlayer();
@@ -42,4 +42,5 @@ import exercise_1.MediaPlayer;
 	     player.play("mp3", "song.mp3");
 	 }
 	}
+
 

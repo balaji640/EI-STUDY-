@@ -2,12 +2,12 @@ package exercise_1;
 
 	import java.util.*;
 
-	//Observer interface
+	
 	interface Observer {
 	 void update(String news);
 	}
 
-	//Subject
+	
 	class NewsAgency {
 	 private List<Observer> observers = new ArrayList<>();
 	 
@@ -22,7 +22,7 @@ package exercise_1;
 	 }
 	}
 
-	//Concrete Observer
+
 	class NewsChannel implements Observer {
 	 private String name;
 	 
@@ -36,7 +36,7 @@ package exercise_1;
 	 }
 	}
 
-	//Main Demo class (must match file name)
+	
 	public class BehavioralPattern_Observer_Pattern  {
 	 public static void main(String[] args) {
 	     NewsAgency agency = new NewsAgency();
@@ -47,3 +47,4 @@ package exercise_1;
 	     agency.notifyObservers("Breaking News: Design Patterns are powerful!");
 	 }
 	}
+
